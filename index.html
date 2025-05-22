@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://www.chocolatecorona.com/sites/default/files/logo-corona-nuevo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sostenibilidad Corona - Compromiso con el futuro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1508514177221-188e1e464282?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .promise-card {
+            transition: all 0.3s ease;
+        }
+        
+        .promise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .indicator-bar {
+            height: 6px;
+            border-radius: 3px;
+            background-color: #e5e7eb;
+        }
+        
+        .indicator-progress {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background-color: #3b82f6;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.chocolatecorona.com/sites/default/files/logo-corona-nuevo.png" alt="Corona Logo" class="h-12">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#promesas" class="text-gray-700 hover:text-blue-600 font-medium">Nuestras Promesas</a>
+                <a href="#indicadores" class="text-gray-700 hover:text-blue-600 font-medium">Indicadores</a>
+                <a href="#metas" class="text-gray-700 hover:text-blue-600 font-medium">Metas</a>
+                <a href="#proyectos" class="text-gray-700 hover:text-blue-600 font-medium">Proyectos</a>
+            </nav>
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="hero text-white py-20 md:py-32 flex items-center bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll">Sostenibilidad Corona</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-on-scroll" style="transition-delay: 0.2s;">
+            Construyendo un futuro responsable mediante prácticas sostenibles en toda nuestra cadena de valor
+        </p>
+        <a href="#promesas" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 animate-on-scroll" style="transition-delay: 0.4s;">
+            Conoce más <i class="fas fa-arrow-down ml-2"></i>
+        </a>
+    </div>
+</section>
+
+
+    <!-- Quote Section -->
+    <section class="bg-blue-700 text-white py-12">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <blockquote class="text-xl md:text-2xl italic font-light animate-on-scroll">
+                "Lograr un crecimiento sostenible y responsable, reduciendo el impacto ambiental y promoviendo la conservación de recursos naturales, para contribuir a un futuro más sostenible y respetuoso con el medio ambiente"
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Promesas Section -->
+    <section id="promesas" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">Nuestras Cuatro Promesas Clave</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+                En Corona nos comprometemos con la sostenibilidad a través de cuatro pilares fundamentales que guían todas nuestras operaciones
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Promesa 1 -->
+                <div class="promise-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100 animate-on-scroll">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600">
+                        <i class="fas fa-leaf text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Gestión Ambiental</h3>
+                    <p class="text-gray-600">
+                        Reducir el impacto ambiental mediante la gestión eficiente de recursos naturales y la implementación de prácticas sostenibles en toda la cadena de valor.
+                    </p>
+                </div>
+                
+                <!-- Promesa 2 -->
+                <div class="promise-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100 animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <i class="fas fa-hands-helping text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Gestión Social</h3>
+                    <p class="text-gray-600">
+                        Mejorar la calidad de vida de nuestros colaboradores y sus familias, generando impactos positivos en la sociedad a través de programas sociales.
+                    </p>
+                </div>
+                
+                <!-- Promesa 3 -->
+                <div class="promise-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100 animate-on-scroll" style="transition-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 text-yellow-600">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Gestión Financiera</h3>
+                    <p class="text-gray-600">
+                        Asegurar un crecimiento rentable y sostenible, mediante expansión a mercados potenciales y el fortalecimiento de nuestra posición financiera.
+                    </p>
+                </div>
+                
+                <!-- Promesa 4 -->
+                <div class="promise-card bg-white rounded-xl shadow-md overflow-hidden p-6 border border-gray-100 animate-on-scroll" style="transition-delay: 0.6s;">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-purple-600">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Transparencia y Ética</h3>
+                    <p class="text-gray-600">
+                        Promover la transparencia y la ética en todas nuestras operaciones y relaciones con grupos de interés.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indicadores Section -->
+    <section id="indicadores" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">Nuestros Indicadores Clave</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+                Medimos nuestro progreso con indicadores concretos que reflejan nuestro compromiso con la sostenibilidad
+            </p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Indicador 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 text-red-600">
+                            <i class="fas fa-smog"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Reducción de emisiones</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Disminución del 40% de emisiones de gases de efecto invernadero frente a 2019.
+                    </p>
+                    <div class="mb-2 flex justify-between">
+                        <span class="text-sm text-gray-500">Progreso</span>
+                        <span class="text-sm font-bold text-blue-600">65%</span>
+                    </div>
+                    <div class="indicator-bar">
+                        <div class="indicator-progress bg-blue-600" style="width: 65%;"></div>
+                    </div>
+                </div>
+                
+                <!-- Indicador 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 text-blue-600">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Uso eficiente del agua</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Ahorro del 17% de metros cúbicos de agua por tonelada producida en 2022.
+                    </p>
+                    <div class="mb-2 flex justify-between">
+                        <span class="text-sm text-gray-500">Progreso</span>
+                        <span class="text-sm font-bold text-blue-600">100%</span>
+                    </div>
+                    <div class="indicator-bar">
+                        <div class="indicator-progress bg-blue-600" style="width: 100%;"></div>
+                    </div>
+                </div>
+                
+                <!-- Indicador 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 animate-on-scroll" style="transition-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 text-green-600">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Economía circular</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Reincorporación de cerca de 2.500 toneladas de subproductos de materiales de construcción al proceso de fabricación de pasta cerámica.
+                    </p>
+                    <div class="mb-2 flex justify-between">
+                        <span class="text-sm text-gray-500">Progreso</span>
+                        <span class="text-sm font-bold text-blue-600">83%</span>
+                    </div>
+                    <div class="indicator-bar">
+                        <div class="indicator-progress bg-blue-600" style="width: 83%;"></div>
+                    </div>
+                </div>
+                
+                <!-- Indicador 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 animate-on-scroll" style="transition-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4 text-purple-600">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Beneficio social</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Más de 279.900 personas beneficiadas con programas y proyectos sociales en 2023.
+                    </p>
+                    <div class="mb-2 flex justify-between">
+                        <span class="text-sm text-gray-500">Progreso</span>
+                        <span class="text-sm font-bold text-blue-600">112%</span>
+                    </div>
+                    <div class="indicator-bar">
+                        <div class="indicator-progress bg-blue-600" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metas Section -->
+    <section id="metas" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">Nuestras Metas a Largo Plazo</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+                Proyectos y programas con metas definidas para la ejecución de nuestras promesas sostenibles
+            </p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-10 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">2025 - Reducción de emisiones</h3>
+                        <p class="text-gray-600">
+                            Alcanzar una reducción del 50% en emisiones de gases de efecto invernadero en comparación con 2019.
+                        </p>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-10 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">2026 - Eficiencia hídrica</h3>
+                        <p class="text-gray-600">
+                            Implementar tecnologías para lograr un ahorro del 25% en consumo de agua por tonelada producida.
+                        </p>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-10 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">2027 - Economía circular</h3>
+                        <p class="text-gray-600">
+                            Reincorporar más de 5,000 toneladas anuales de subproductos al proceso productivo.
+                        </p>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-10">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">2030 - Impacto social</h3>
+                        <p class="text-gray-600">
+                            Beneficiar a más de 500,000 personas mediante programas sociales y de desarrollo comunitario.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Section -->
+    <section id="proyectos" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">Proyectos y Certificaciones</h2>
+            <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+                Nuestro plan de sostenibilidad social y ambiental incluye proyectos específicos para alcanzar nuestras metas
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-on-scroll">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 text-blue-600">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-blue-600">Medio Ambiente</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Programa de eficiencia energética</h3>
+                        <p class="text-gray-600 mb-4">
+                            Implementación de tecnologías limpias y renovables en nuestros procesos productivos para reducir el consumo energético.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium flex items-center">
+                            Ver más <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3 text-green-600">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-green-600">Economía Circular</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Reutilización de materiales</h3>
+                        <p class="text-gray-600 mb-4">
+                            Sistema integral para recuperar y reincorporar subproductos de construcción a nuestros procesos de fabricación.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium flex items-center">
+                            Ver más <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-on-scroll" style="transition-delay: 0.4s;">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3 text-purple-600">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-purple-600">Desarrollo Social</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Comunidades sostenibles</h3>
+                        <p class="text-gray-600 mb-4">
+                            Programas de educación, vivienda y emprendimiento para mejorar la calidad de vida en las comunidades donde operamos.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium flex items-center">
+                            Ver más <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificaciones -->
+            <div class="mt-16 animate-on-scroll">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Certificaciones y Reconocimientos</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    <img src="https://png.pngtree.com/png-clipart/20230811/original/pngtree-iso-14001-certified-badge-picture-image_7857373.png" alt="ISO 14001" class="h-16 md:h-20">
+                    <img src="https://png.pngtree.com/png-vector/20250130/ourmid/pngtree-iso-9001-certified-vector-png-image_15374165.png" alt="ISO 9001" class="h-16 md:h-20">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDlheaqhFfDjZPQkScicU5rw6r6F1BCGr3yw&s" alt="Ecolabel" class="h-16 md:h-20">
+                    <img src="https://seo.yellowmk.com/wp-content/uploads/2024/07/FC-1.png" alt="LEED" class="h-16 md:h-20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Únete a nuestro compromiso con la sostenibilidad</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">
+                Juntos podemos construir un futuro más sostenible y responsable con el medio ambiente
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full inline-block transition duration-300">
+                    Conoce nuestros proyectos <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#" class="border-2 border-white text-white hover:bg-blue-800 font-bold py-3 px-8 rounded-full inline-block transition duration-300">
+                    Contáctanos <i class="fas fa-envelope ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://www.chocolatecorona.com/sites/default/files/logo-corona-nuevo.png" alt="Corona Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">
+                        Comprometidos con la construcción de un futuro sostenible para las próximas generaciones.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Sostenibilidad</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Nuestras promesas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Indicadores</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Metas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Proyectos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Recursos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Reportes de sostenibilidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Políticas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Certificaciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contáctanos</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400"><i class="fas fa-map-marker-alt mr-3"></i> Bogotá, Colombia</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-phone-alt mr-3"></i> +57 1 123 4567</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-envelope mr-3"></i> sostenibilidad@corona.com</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2023 Corona. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animación al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Animación de las barras de progreso
+            document.querySelectorAll('.indicator-progress').forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+            
+            // Smooth scrolling para los enlaces del menú
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
